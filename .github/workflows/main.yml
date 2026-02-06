@@ -20,6 +20,6 @@ jobs:
           echo "Lancement du test unitaire ..."
           docker run -d --name test-unitaires my-app:${{github.sha}}
           sleep 5
-          docker exec -it test-unitaires nginx -t
+          docker exec test-unitaires nginx -t
           echo "Test unitaire terminé"
           docker stop test-unitaires
