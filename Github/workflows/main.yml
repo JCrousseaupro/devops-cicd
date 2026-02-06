@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build -t -w my-app:${{ github.sha }} .
+        run: docker build -t my-app:${{ github.sha }} .
 
       - name : test unitaires
 
