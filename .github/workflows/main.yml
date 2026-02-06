@@ -12,13 +12,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build image
-        run: docker build -t my-app:${{ github.sha }} .
+        run: docker build -t my-app:${{github.sha}} .
 
-      - name : test unitaires
+      - name : test-unitaires
 
         run: |
           echo "Lancement du test unitaire ..."
-          docker run -d --name test-unitaires my-app:${{ github.sha }}
+          docker run -d --name test-unitaires my-app:${{github.sha}}
           sleep 5
           docker exec -it test-unitaires nginx -t
           echo "Test unitaire terminé"
